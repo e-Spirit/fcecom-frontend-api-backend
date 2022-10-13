@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"./**/*.{ts,js,json}\"",
+    "format:check": "prettier --config .prettierrc --check \"src/**/*.{ts,js,json}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.0.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "fcecom-frontend-api-server": "0.1.1-SNAPSHOT",
+    "lodash": "^4.17.21",
+    "prettier": "^2.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
