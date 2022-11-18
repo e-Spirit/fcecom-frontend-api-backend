@@ -6,7 +6,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'prettier'],
   rules: {},
   overrides: [
     {

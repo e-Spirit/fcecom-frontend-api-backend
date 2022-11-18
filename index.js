@@ -1,29 +1,26 @@
-require('dotenv').config();
-require('cross-fetch/polyfill');
-const express = require('express');
-const { EcomFSXARemoteApi, sessionMiddleware } = require('fcecom-frontend-api-server');
-const expressIntegration = require('fcecom-frontend-api-server/dist/lib/core/integrations/express').default;
+const { getEcomEndpoints } = require('fcecom-frontend-api-server');
 
-const cors = require('cors');
-const { APIKEY, NAVIGATION_SERVICE_URL, CAAS_URL, FS_SERVER_URL, PROJECT_ID, TENANT_ID, PORT } = process.env;
-const app = express();
+// Configuration
+process.env.NODE_CONFIG_DIR = './config';
 
-const remoteApi = new EcomFSXARemoteApi({
-  apikey: APIKEY,
-  navigationServiceURL: NAVIGATION_SERVICE_URL,
-  caasURL: CAAS_URL,
-  projectID: PROJECT_ID,
-  tenantID: TENANT_ID,
-  fsServerUrl: FS_SERVER_URL
-});
+const config = require('config');
 
-app.use(cors());
-app.use(express.json()); /* needs to be set here else it overrides the sessionMiddleware */
-app.use(sessionMiddleware());
+const port = config.get('server.port') || 3000;
+const basePath = config.get('server.basePath');
+const coreConfig = config.get('core');
 
-app.use('/api', expressIntegration({ api: remoteApi }));
+// Express Server implementation
+const app = require('express')();
+app.disable('x-powered-by'); // Disable the fingerprinting of this web technology. SonarCube: javascript:S5689
 
-app.use(express.static(__dirname + '/public'));
-app.set('/js', express.static(__dirname + 'public/js'));
+app.use(require('cors')());
 
-app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
+const ecomEndpoints = getEcomEndpoints(coreConfig);
+if (!ecomEndpoints) {
+  console.error(`Problem getting endpoints. Terminating...`);
+  process.exit(1);
+}
+
+app.use(`${basePath}`, ecomEndpoints);
+
+app.listen(port, () => console.log(`Server started on PORT ${port}`));

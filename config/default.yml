@@ -1,0 +1,41 @@
+# to configure your setup, add config files with this naming convention without uploading to Git (they are ignored by default_
+# https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order
+
+server:
+  # The port on which this backend service is started.
+  port: 3001
+
+  # The path on which this backend service is served.
+  basePath: /api
+
+core:
+  project:
+    # The API key of the CaaS instance for different viewing modes.
+    apiKey:
+      # Master API key for both viewing modes. All non-set apiKeys will default to this one.
+      master: &master <insert-master-key-for-reference>
+
+      # The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key.
+      preview: *master # (use reference or leave blank when providing a master key)
+
+      # The API key of the CaaS instance for release viewing mode. Leave blank when providing a master key.
+      release: *master # (use reference or leave blank when providing a master key)
+
+    # The URL of the navigation service.
+    navigationServiceURL:
+
+    # The URL of the CaaS instance.
+    caasURL:
+
+    # The ID of the CaaS project.
+    projectID:
+
+    # The tenant ID of the CaaS project.
+    tenantID:
+
+  # The base URL of the server running the Content Creator.
+  fsServerOrigin:
+
+  # Numeric representation of logLevels:
+  # DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, NONE = 4
+  logLevel: 0
