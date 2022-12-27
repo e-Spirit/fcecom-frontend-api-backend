@@ -13,7 +13,7 @@ core:
     # The API key of the CaaS instance for different viewing modes.
     apiKey:
       # Master API key for both viewing modes. All non-set apiKeys will default to this one.
-      master: &master <insert-master-key-for-reference>
+      master: &master aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
 
       # The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key.
       preview: *master # (use reference or leave blank when providing a master key)
@@ -22,19 +22,19 @@ core:
       release: *master # (use reference or leave blank when providing a master key)
 
     # The URL of the navigation service.
-    navigationServiceURL:
+    navigationServiceURL: https://example.org/NavigationService
 
     # The URL of the CaaS instance.
-    caasURL:
+    caasURL: https://example.org/CaaS
 
     # The ID of the CaaS project.
-    projectID:
+    projectID: aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
 
     # The tenant ID of the CaaS project.
-    tenantID:
+    tenantID: tenant-id
 
   # The base URL of the server running the Content Creator.
-  fsServerOrigin:
+  fsServerOrigin: https://example.org/FSServerOrigin
 
   # Numeric representation of logLevels:
   # DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, NONE = 4

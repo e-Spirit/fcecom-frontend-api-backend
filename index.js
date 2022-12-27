@@ -9,6 +9,7 @@ const port = config.get('server.port') || 3000;
 const basePath = config.get('server.basePath');
 const coreConfig = config.get('core');
 
+
 // Express Server implementation
 const app = require('express')();
 app.disable('x-powered-by'); // Disable the fingerprinting of this web technology. SonarCube: javascript:S5689

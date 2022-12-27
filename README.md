@@ -1,18 +1,23 @@
 # FirstSpirit Connect for Commerce Frontend API Backend Service
 
-The [Connect for Commerce Frontend API client](https://www.npmjs.com/package/fcecom-frontend-api-client) requires this backend service to communicate with the CaaS.
-It offers the functionalities provided by the [Connect for Commerce Frontend API server](https://www.npmjs.com/package/fcecom-frontend-api-server) using an Express server.
+The [Connect for Commerce Frontend API Client](https://www.npmjs.com/package/fcecom-frontend-api-client) requires this
+backend service to communicate with the CaaS.
+It offers the functionalities provided by
+the [Connect for Commerce Frontend API Server](https://www.npmjs.com/package/fcecom-frontend-api-server) using an
+Express server.
 
 For more information about FirstSpirit or Connect for Commerce please
 use [this contact form](https://www.crownpeak.com/contact-us) to get in touch.
 
+## Requirements
+
+A node version of at least 18 is required.
+
 ## How to use
 
-We recommend version 18 of Node.js.
-
-1. Clone git repository.
+1. Clone the repository.
 2. Run `npm i`.
-3. Use the **config/default.yml** template to create an **config/local.yaml** file.
+3. Use the **config/default.yml** template to create a **config/local.yaml** file.
 4. Run `npm start` to start the service or `npm run start:watch` to enable live reload.
 
 ## Configuration
