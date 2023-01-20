@@ -1,44 +1,48 @@
-# to configure your setup, add config files with this naming convention without uploading to Git (they are ignored by default_
-# https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order
+# environment variables mapping
+# https://github.com/node-config/node-config/wiki/Environment-Variables#custom-environment-variables
 
 server:
   # The port on which this backend service is started.
-  port: 3001
+  port:
+    __name: PORT
+    __format: number
 
   # The path on which this backend service is served.
-  basePath: /api
+  basePath: BASE_PATH
 
 core:
   project:
     # The API key of the CaaS instance for different viewing modes.
     apiKey:
       # Master API key for both viewing modes. All non-set apiKeys will default to this one.
-      master: &master aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+      master: MASTER_KEY
 
       # The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key.
-      preview: *master # (use reference or leave blank when providing a master key)
+      preview: PREVIEW_KEY
 
       # The API key of the CaaS instance for release viewing mode. Leave blank when providing a master key.
-      release: *master # (use reference or leave blank when providing a master key)
+      release: RELEASE_KEY
 
     # The URL of the navigation service.
-    navigationServiceURL: https://example.org/NavigationService
+    navigationServiceURL: NAVIGATION_SERVICE_URL
 
     # The URL of the CaaS instance.
-    caasURL: https://example.org/CaaS
+    caasURL: CAAS_URL
 
     # The ID of the CaaS project.
-    projectID: aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+    projectID: PROJECT_ID
 
     # The tenant ID of the CaaS project.
-    tenantID: tenant-id
+    tenantID: TENANT_ID
 
   # The base URL of the server running the Content Creator.
-  fsServerOrigin: https://example.org/FSServerOrigin
+  fsServerOrigin: FS_SERVER_ORIGIN
 
   # A fallback locale used if any request is received without explicit locale. Has to have format like in 'de_DE'
-  defaultLocale: 'de_DE'
+  defaultLocale: DEFAULT_LOCALE
 
   # Numeric representation of logLevels:
   # DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, NONE = 4
-  logLevel: 0
+  logLevel:
+    __name: LOG_LEVEL
+    __format: number

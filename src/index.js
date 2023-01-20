@@ -1,14 +1,15 @@
 const { getEcomEndpoints } = require('fcecom-frontend-api-server');
+const { logConfig } = require('./utils/logConfig');
 
 // Configuration
 process.env.NODE_CONFIG_DIR = './config';
 
 const config = require('config');
+logConfig(config);
 
 const port = config.get('server.port') || 3000;
 const basePath = config.get('server.basePath');
 const coreConfig = config.get('core');
-
 
 // Express Server implementation
 const app = require('express')();
