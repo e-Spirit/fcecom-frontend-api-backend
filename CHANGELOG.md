@@ -1,3 +1,13 @@
+## [1.6.9](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.8...v1.6.9) (2023-11-16)
+
+### Changes
+* Updated fcecom-frontend-api-server to v0.16.0.
+
+## [1.6.8](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.7...v1.6.8) (2023-11-02)
+
+### Changes
+* Updated fcecom-frontend-api-server to v0.15.0.
+
 ## [1.6.7](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.6...v1.6.7) (2023-10-25)
 
 ### Changes
