@@ -1,6 +1,6 @@
 {
   "name": "fcecom-frontend-api-backend",
-  "version": "1.6.9",
+  "version": "1.6.10",
   "description": "FirstSpirit Connect for Commerce - Frontend API Backend",
   "main": "src/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "config": "^3.3.8",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "fcecom-frontend-api-server": "^0.16.0",
+    "fcecom-frontend-api-server": "^0.17.0",
     "joi": "^17.7.0",
     "js-yaml": "^4.1.0"
   },
