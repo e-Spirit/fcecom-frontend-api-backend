@@ -25,3 +25,5 @@
 # lockfiles
 **/package-lock.json
 **/yarn.lock
+
+fcecom-cli.json

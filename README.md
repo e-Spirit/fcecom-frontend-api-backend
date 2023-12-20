@@ -73,6 +73,17 @@ Configuration of the server itself is made within the `server` segment.
 |   port   |    PORT     | The port on which this backend service is started. |
 | basePath |  BASE_PATH  | The path on which this backend service is served.  |
 
+### Troubleshooting
+
+If the configuration is doing things you don't expect, it might be that the actual config values are coming from a different source and are overwriting your target changes.
+To find out which configuration source is being used and which values are being overwritten, we provide an npm script.
+
+```bash
+npm run config:inspect
+```
+
+This shows all configuration sources detected and the changes between each overriding stage.
+
 ## Legal Notices
 
 The Connect for Commerce Frontend API Backend Service is a product of [Crownpeak Technology GmbH](https://www.crownpeak.com), Dortmund,

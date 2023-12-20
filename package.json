@@ -1,25 +1,31 @@
 {
   "name": "fcecom-frontend-api-backend",
-  "version": "1.6.11",
+  "version": "2.0.0",
   "description": "FirstSpirit Connect for Commerce - Frontend API Backend",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "clean:full": "rm -rf build node_modules package-lock.json dist test-reports coverage",
-    "start": "node src/index.js",
+    "start": "node .",
     "start:watch": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "config:inspect": "node src/utils/inspectConfig.js",
     "format": "prettier --write \"./**/*.{ts,js,json}\"",
     "format:check": "prettier --config .prettierrc --check \"src/**/*.{ts,js,json}\""
   },
-  "keywords": [],
+  "files": [
+    "package.json"
+  ],
   "author": "Crownpeak Technology GmbH",
   "license": "Apache-2.0",
   "dependencies": {
+    "chalk": "^5.3.0",
     "cli-highlight": "^2.1.11",
     "config": "^3.3.8",
     "cors": "^2.8.5",
+    "diff": "^5.1.0",
     "express": "^4.18.1",
-    "fcecom-frontend-api-server": "^0.18.0",
+    "fcecom-frontend-api-server": "^0.19.0",
     "joi": "^17.7.0",
     "js-yaml": "^4.1.0"
   },

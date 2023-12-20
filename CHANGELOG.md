@@ -1,8 +1,18 @@
+## [2.0.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.11...v2.0.0) (2023-12-20)
+
+### Changes
+* Optimization of config validation.
+* Updated fcecom-frontend-api-server to v0.19.0.
+
+### UPDATE NOTICE
+
+* During the implementation of this feature, the Frontend API backend has been switched to ES modules and expects the server package to contain the correct file extensions for the bundles. This is a breaking change and only compatible with Frontend API server package >= 0.19.0.
+
 ## [1.6.11](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.10...v1.6.11) (2023-12-02)
 
 ### Changes
 * Updated fcecom-frontend-api-server to v0.18.0.
-* 
+
 ## [1.6.10](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.9...v1.6.10) (2023-11-27)
 
 ### Changes
