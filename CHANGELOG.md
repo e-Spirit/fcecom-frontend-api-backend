@@ -1,3 +1,13 @@
+## [2.1.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.0.1...v2.1.0) (2024-01-22)
+
+### Changes
+* Added configuration to filter untranslated sections.
+* Added template for multi-tenant support with Docker Compose.
+* Updated fcecom-frontend-api-server to v0.22.0.
+
+### UPDATE NOTICE
+* If the filter for untranslated sections is enabled in the Frontend API Backend configuration, the "Add content" button is rendered if there is no content for the section for the current language. Please note that the input components of the section templates must be language-dependent, otherwise this can lead to undesirable side effects.
+
 ## [2.0.1](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.0.0...v2.0.1) (2023-12-21)
 
 ### Changes
@@ -10,7 +20,6 @@
 * Updated fcecom-frontend-api-server to v0.19.0.
 
 ### UPDATE NOTICE
-
 * During the implementation of this feature, the Frontend API backend has been switched to ES modules and expects the server package to contain the correct file extensions for the bundles. This is a breaking change and only compatible with Frontend API server package >= 0.19.0.
 
 ## [1.6.11](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v1.6.10...v1.6.11) (2023-12-02)

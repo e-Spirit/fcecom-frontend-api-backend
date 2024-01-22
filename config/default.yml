@@ -33,6 +33,9 @@ core:
     # The tenant ID of the CaaS project.
     tenantID: tenant-id
 
+    # Whether untranslated sections should be filtered out.
+    removeUntranslatedSections: false
+
   # The base URL of the server running the Content Creator.
   fsServerOrigin: https://example.org/FSServerOrigin
 

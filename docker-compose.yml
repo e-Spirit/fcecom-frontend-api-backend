@@ -1,0 +1,45 @@
+# This is an example template to illustrate the use of Docker Compose for multi-tenant support.
+version: '3.5'
+
+services:
+  fcecom-frontend-api-backend-1:
+    image: <IMAGE_NAME>:<VERSION>
+    container_name: fcecom-frontend-api-backend-1
+    restart: on-failure
+    ports:
+      - '3001:3001'
+    environment:
+        - PORT=3001
+        - BASE_PATH=/api
+        - MASTER_KEY=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - PREVIEW_KEY=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - RELEASE_KEY=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - NAVIGATION_SERVICE_URL=https://example.org/NavigationService
+        - CAAS_URL=https://example.org/CaaS
+        - PROJECT_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - TENANT_ID=tenant-id
+        - FS_SERVER_ORIGIN=https://example.org/FSServerOrigin
+        - REMOVE_UNTRANSLATED_SECTIONS=false
+        - DEFAULT_LOCALE=de_DE
+        - LOG_LEVEL=0
+
+  fcecom-frontend-api-backend-2:
+    image: <IMAGE_NAME>:<VERSION>
+    container_name: fcecom-frontend-api-backend-2
+    restart: on-failure
+    ports:
+      - '3002:3001'
+    environment:
+        - PORT=3001
+        - BASE_PATH=/api
+        - MASTER_KEY=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - PREVIEW_KEY=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - RELEASE_KEY=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - NAVIGATION_SERVICE_URL=https://example.org/NavigationService
+        - CAAS_URL=https://example.org/CaaS
+        - PROJECT_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        - TENANT_ID=tenant-id
+        - FS_SERVER_ORIGIN=https://example.org/FSServerOrigin
+        - REMOVE_UNTRANSLATED_SECTIONS=false
+        - DEFAULT_LOCALE=de_DE
+        - LOG_LEVEL=0

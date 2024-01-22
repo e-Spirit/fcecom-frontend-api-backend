@@ -37,12 +37,13 @@ supplied via environment variables keep their values from the files. We have pro
 Configuration of the FirstSpirit related part of the Frontend API module is made within the `core.project` segment of the configuration
 files.
 
-|        Param         |      Environment       | Description                        |
-|:--------------------:|:----------------------:|:-----------------------------------|
-| navigationServiceURL | NAVIGATION_SERVICE_URL | The URL of the navigation service. |
-|       caasURL        |        CAAS_URL        | The URL of the CaaS instance.      |
-|      projectID       |       PROJECT_ID       | The ID of the CaaS project.        |
-|       tenantID       |       TENANT_ID        | The tenant ID of the CaaS project. |
+|           Param            |         Environment          | Description                                                                        |
+|:--------------------------:|:----------------------------:|:-----------------------------------------------------------------------------------|
+|    navigationServiceURL    |    NAVIGATION_SERVICE_URL    | The URL of the navigation service.                                                 |
+|          caasURL           |           CAAS_URL           | The URL of the CaaS instance.                                                      |
+|         projectID          |          PROJECT_ID          | The ID of the CaaS project.                                                        |
+|          tenantID          |          TENANT_ID           | The tenant ID of the CaaS project.                                                 |
+| removeUntranslatedSections | REMOVE_UNTRANSLATED_SECTIONS | Whether untranslated sections should be filtered out (optional, default is false). |
 
 ### Core
 
@@ -83,6 +84,31 @@ npm run config:inspect
 ```
 
 This shows all configuration sources detected and the changes between each overriding stage.
+
+### Multi-Tenant Support
+We provide an example `Dockerfile` and `docker-compose.yml` to enable multi-tenant support for this service.
+
+Build and tag the Docker image with a custom name and version:
+```docker
+docker build -t <IMAGE_NAME>:<VERSION> .
+```
+
+The `docker-compose.yml` demonstrates how to define multiple instances of the Frontend API Backend with a different configuration.
+
+Replace `<IMAGE_NAME>:<VERSION>` with the name and tag that you chose for your Docker image.
+You can set environment variables directly with the `environment` attribute for each configuration of an instance. Replace the values with the correct credentials.
+
+Start the containers:
+```docker
+docker compose up -d
+```
+
+Stop the containers:
+```docker
+docker compose down
+```
+
+Please be aware that the Docker containers need to be accessible from your FirstSpirit instance in order to work with the Connect for Commerce module. A deployment to a Cloud provider might be necessary for this.
 
 ## Legal Notices
 
