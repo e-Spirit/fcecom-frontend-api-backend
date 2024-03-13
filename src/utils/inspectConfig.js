@@ -5,11 +5,11 @@ import {diffJson} from "diff";
 import {highlight} from 'cli-highlight';
 import chalk from "chalk";
 
-export const logDefault = (name, parsed) =>
+export const logDefault = ({name, parsed}) =>
     console.log(chalk.dim(`\nDefault Configuration from ${name}\n`),
         highlight(maskedJsonString(parsed), {language: 'json', ignoreIllegals: true}));
 
-export const logConfigDiff = (name, parsed, index, arr) => {
+export const logConfigDiff = ({name, parsed}, index, arr) => {
     console.log(chalk.dim(`\n${arr[index - 1].name} -> ${name}`));
     diffJson(maskedJsonString(arr[index - 1].parsed), maskedJsonString(parsed)).forEach(logDiff)
     return console.log()
@@ -62,9 +62,9 @@ config.util.getConfigSources().forEach(({name, parsed}, index, arr) => {
     let basePath = dirname(name);
     let filename = name.split(`${basePath}/`).pop()
 
-    if (filename.includes('default')) return logDefault(name, parsed);
-    else if (filename.includes('custom-environment-variables')) return logEnv(arr, index);
-    else logConfigDiff(name, parsed, index, arr);
+    if (filename?.includes('default')) return logDefault({name, parsed});
+    else if (filename?.includes('custom-environment-variables')) return logEnv(arr, index);
+    else logConfigDiff({name, parsed}, index, arr);
 })
 
 logFinalConfig();

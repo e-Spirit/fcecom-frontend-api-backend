@@ -1,3 +1,11 @@
+## [2.3.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.2.0...v2.3.0) (2024-02-12)
+
+### Changes
+* Changed used programming language to TypeScript.
+* Added SSL support.
+* Improved Dockerfile.
+* Updated fcecom-frontend-api-server to v0.24.0.
+
 ## [2.2.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.1.0...v2.2.0) (2024-01-30)
 
 ### Changes

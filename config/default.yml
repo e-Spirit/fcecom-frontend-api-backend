@@ -8,6 +8,17 @@ server:
   # The path on which this backend service is served.
   basePath: /api
 
+  # Providing SSL Encryption for risen browser requirements
+  ssl:
+    # Use SSL?
+    enabled: false
+
+    # The path to the SSL Key file
+    key:
+
+    # The path to the SSL Certificate file
+    cert:
+
 core:
   project:
     # The API key of the CaaS instance for different viewing modes.

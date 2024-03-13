@@ -10,6 +10,19 @@ server:
   # The path on which this backend service is served.
   basePath: BASE_PATH
 
+  # Providing SSL Encryption for risen browser requirements
+  ssl:
+    # Use SSL?
+    enabled:
+      __name: USE_SSL
+      __format: boolean
+
+    # The path to the SSL Key file
+    key: SSL_KEY_PATH
+
+    # The path to the SSL Certificate file
+    cert: SSL_CERT_PATH
+
 core:
   project:
     # The API key of the CaaS instance for different viewing modes.

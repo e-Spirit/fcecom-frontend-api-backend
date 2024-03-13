@@ -29,8 +29,11 @@ We provide a default configuration under `config/default.yml`. We suggest creati
 For use in production or just in other environments you have the ability to create separate files. The loading order is managed by the `config`
 package we use. Learn more in [their documentation](https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order).
 
-Alternatively you can override all or just single values with environment variables. They are listed in the tables below. All values not
-supplied via environment variables keep their values from the files. We have provided a `.env.template` file in order to simplify the process.
+Alternatively you can override all or just single values with environment variables.
+You can either add them to your `.bashrc` file or export them for the current shell and all processes like this:
+`export DEFAULT_LOCALE="de_DE"`. All values not supplied via environment variables keep their values from the files.
+
+We provide an overview of all available values in the `.env.template`. For further information see the descriptions in the table below.
 
 ### Project
 
@@ -74,6 +77,17 @@ Configuration of the server itself is made within the `server` segment.
 |   port   |    PORT     | The port on which this backend service is started. |
 | basePath |  BASE_PATH  | The path on which this backend service is served.  |
 
+### SSL
+
+SSL configuration is made within the `ssl` segment inside the server config. SSL is disabled by default.
+
+| Param   | Environment   | Description                                                                                     |
+|---------|---------------|-------------------------------------------------------------------------------------------------|
+| enabled | USE_SSL       | Whether to use SSL or not.                                                                      |
+| key     | SSL_KEY_PATH  | Path to the SSL Key file, either absolute or relative to the current working directory.         |
+| cert    | SSL_CERT_PATH | Path to the SSL Certificate file, either absolute or relative to the current working directory. |
+
+
 ### Troubleshooting
 
 If the configuration is doing things you don't expect, it might be that the actual config values are coming from a different source and are overwriting your target changes.
@@ -87,6 +101,12 @@ This shows all configuration sources detected and the changes between each overr
 
 ### Multi-Tenant Support
 We provide an example `Dockerfile` and `docker-compose.yml` to enable multi-tenant support for this service.
+
+Compile the code:
+```
+npm i
+npm run build
+```
 
 Build and tag the Docker image with a custom name and version:
 ```docker
