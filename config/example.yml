@@ -1,70 +1,65 @@
-# environment variables mapping
-# https://github.com/node-config/node-config/wiki/Environment-Variables#custom-environment-variables
+# to configure your setup, add config files with this naming convention without uploading to Git (they are ignored by default)
+# https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order
 
 server:
   # The port on which this backend service is started.
-  port:
-    __name: PORT
-    __format: number
+  port: 3001
 
   # The path on which this backend service is served.
-  basePath: BASE_PATH
+  basePath: /api
 
   # Providing SSL Encryption for risen browser requirements
   ssl:
     # Use SSL?
-    enabled:
-      __name: USE_SSL
-      __format: boolean
+    enabled: false
 
     # The path to the SSL Key file
-    key: SSL_KEY_PATH
+    key:
 
     # The path to the SSL Certificate file
-    cert: SSL_CERT_PATH
+    cert:
 
 core:
   project:
     # The API key of the CaaS instance for different viewing modes.
     apiKey:
       # Master API key for both viewing modes. All non-set apiKeys will default to this one.
-      master: MASTER_KEY
+      master: &master aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
 
       # The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key.
-      preview: PREVIEW_KEY
+      preview: *master # (use reference or leave blank when providing a master key)
 
       # The API key of the CaaS instance for release viewing mode. Leave blank when providing a master key.
-      release: RELEASE_KEY
+      release: *master # (use reference or leave blank when providing a master key)
 
+    # Optional
     # Specify projects with referenced media objects.
     remotes:
-      symbolic_name:
-        # The ID of the FirstSpirit remote project
-        id: MEDIA_ID
-
-        # The master language of the remote project
-        locale: MEDIA_LOCALE
+      media:
+        id: aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
+        locale: de_DE
 
     # The URL of the navigation service.
-    navigationServiceURL: NAVIGATION_SERVICE_URL
+    navigationServiceURL: https://example.org/NavigationService
 
     # The URL of the CaaS instance.
-    caasURL: CAAS_URL
+    caasURL: https://example.org/CaaS
 
     # The ID of the CaaS project.
-    projectID: PROJECT_ID
+    projectID: aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
 
     # The tenant ID of the CaaS project.
-    tenantID: TENANT_ID
+    tenantID: tenant-id
+
+    # Whether untranslated sections should be filtered out.
+    removeUntranslatedSections: false
 
   # The base URL of the server running the Content Creator.
-  fsServerOrigin: FS_SERVER_ORIGIN
+  fsServerOrigin: https://example.org/FSServerOrigin
 
-  # A fallback locale used if any request is received without explicit locale. Has to have format like in 'de_DE'
-  defaultLocale: DEFAULT_LOCALE
+  # A fallback locale used if any request is received without explicit locale. Has to have format like in de_DE
+  defaultLocale: de_DE
 
   # Numeric representation of logLevels:
   # DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, NONE = 4
-  logLevel:
-    __name: LOG_LEVEL
-    __format: number
+  logLevel: 0

@@ -1,3 +1,9 @@
+## [2.5.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.4.0...v2.5.0) (2024-05-17)
+
+### Changes
+* Added the ability to configure FirstSpirit remote projects.
+* Updated fcecom-frontend-api-server to v1.0.0.
+
 ## [2.4.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.3.0...v2.4.0) (2024-03-22)
 
 ### Changes

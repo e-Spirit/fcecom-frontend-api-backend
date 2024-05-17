@@ -17,23 +17,23 @@ A node version of at least 18 is required.
 
 1. Clone the repository.
 2. Run `npm i`.
-3. Use the **config/default.yml** template to create a **config/local.yaml** file.
+3. Use the **config/example.yml** template to create a **config/local.yaml** file.
 4. Run `npm start` to start the service or `npm run start:watch` to enable live reload.
 
 ## Configuration
 
 ### Files
 
-We provide a default configuration under `config/default.yml`. We suggest creating a copy of it and name it `local.yml` for development.
+We provide a default configuration under `config/example.yml`. We suggest creating a copy of it and name it `local.yml` for development.
 
 For use in production or just in other environments you have the ability to create separate files. The loading order is managed by the `config`
-package we use. Learn more in [their documentation](https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order).
+package we use. Learn more in [the packages' documentation](https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order).
 
 Alternatively you can override all or just single values with environment variables.
 You can either add them to your `.bashrc` file or export them for the current shell and all processes like this:
 `export DEFAULT_LOCALE="de_DE"`. All values not supplied via environment variables keep their values from the files.
 
-We provide an overview of all available values in the `.env.template`. For further information see the descriptions in the table below.
+We provide an overview of all available values in the `config/example.yml`. For further information see the descriptions in the table below.
 
 ### Project
 
@@ -47,6 +47,48 @@ files.
 |         projectID          |          PROJECT_ID          | The ID of the CaaS project.                                                        |
 |          tenantID          |          TENANT_ID           | The tenant ID of the CaaS project.                                                 |
 | removeUntranslatedSections | REMOVE_UNTRANSLATED_SECTIONS | Whether untranslated sections should be filtered out (optional, default is false). |
+
+### Remotes
+
+Configuring FristSpirit Remote Projects is handled by the `core.project.remotes` entry. It is an object with the symbolic name of the remote project as key and an object containing the following fields as a value.
+
+More information about the remote configuration can be found in the [JavaScript Content API Library readme](https://github.com/e-Spirit/javascript-content-api-library#constructor).
+
+<div class="warning" style='padding:0.1em; background-color:#eeeeee; color:#69337A'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>Attention</b></p>
+<p style='margin-left:1em;'>
+Currently, the underlying Content API can only work with the master language of the remote media project. You also need to provide a CaaS API key with read permissions to both projects.
+</p>
+</span>
+</div>
+
+| Param  | Description                               |
+|:------:|-------------------------------------------|
+|   id   | The ID of the FirstSpirit remote project  |
+| locale | The master language of the remote project |
+
+How to configure via Environment Variables
+
+The "symbolic name" can be any unique string. E.g. use the symbolic name of the remote project.
+
+Add the following to your `custom-environment-variables.yml`:
+
+```yml
+# Specify projects with referenced media objects.
+core:
+  project:
+    # ...
+    remotes:
+      symbolic_name:
+        # The ID of the FirstSpirit remote project
+        id: MEDIA_ID
+    
+        # The master language of the remote project
+        locale: MEDIA_LOCALE
+    # ...
+```
 
 ### Core
 

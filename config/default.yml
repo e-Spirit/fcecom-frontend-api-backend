@@ -1,4 +1,6 @@
-# to configure your setup, add config files with this naming convention without uploading to Git (they are ignored by default_
+# This file ha the mandatory configuration. It can be changed or overridden by subsequent files.
+# Learn more about the loading order of overriding files with the link below.
+# To configure your setup, add config files with this naming convention without uploading to Git (they are ignored by default)
 # https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order
 
 server:
@@ -13,46 +15,7 @@ server:
     # Use SSL?
     enabled: false
 
-    # The path to the SSL Key file
-    key:
-
-    # The path to the SSL Certificate file
-    cert:
-
 core:
-  project:
-    # The API key of the CaaS instance for different viewing modes.
-    apiKey:
-      # Master API key for both viewing modes. All non-set apiKeys will default to this one.
-      master: &master aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
-
-      # The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key.
-      preview: *master # (use reference or leave blank when providing a master key)
-
-      # The API key of the CaaS instance for release viewing mode. Leave blank when providing a master key.
-      release: *master # (use reference or leave blank when providing a master key)
-
-    # The URL of the navigation service.
-    navigationServiceURL: https://example.org/NavigationService
-
-    # The URL of the CaaS instance.
-    caasURL: https://example.org/CaaS
-
-    # The ID of the CaaS project.
-    projectID: aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
-
-    # The tenant ID of the CaaS project.
-    tenantID: tenant-id
-
-    # Whether untranslated sections should be filtered out.
-    removeUntranslatedSections: false
-
-  # The base URL of the server running the Content Creator.
-  fsServerOrigin: https://example.org/FSServerOrigin
-
-  # A fallback locale used if any request is received without explicit locale. Has to have format like in 'de_DE'
-  defaultLocale: 'de_DE'
-
   # Numeric representation of logLevels:
   # DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, NONE = 4
-  logLevel: 0
+  logLevel: 1
