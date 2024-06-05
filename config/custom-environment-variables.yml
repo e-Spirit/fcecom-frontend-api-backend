@@ -10,6 +10,16 @@ server:
   # The path on which this backend service is served.
   basePath: BASE_PATH
 
+  # Specify Swagger UI serving
+  docs:
+    # Whether to serve Swagger UI
+    enabled:
+      __name: SERVE_DOCS
+      __format: boolean
+
+    # Path on which the Swagger UI should be served
+    basePath: DOCS_BASE_PATH
+
   # Providing SSL Encryption for risen browser requirements
   ssl:
     # Use SSL?

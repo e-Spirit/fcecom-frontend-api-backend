@@ -7,7 +7,7 @@ import https from 'https';
 import fs from 'fs';
 import path from 'node:path';
 
-export default (app: Express): https.Server | Express => {
+export const provideServer = (app: Express): https.Server | Express => {
   const ssl: SSLConfig = config.get('server.ssl') ?? {};
 
   if (ssl.enabled === true) {

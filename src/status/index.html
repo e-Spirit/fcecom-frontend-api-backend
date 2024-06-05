@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Frontend API Backend</title>
+    <script defer src="./status.js"></script>
+    <script defer src="./assets/copyURI.js"></script>
+    <link href="./assets/tailwind-2.2.19.min.css" rel="stylesheet">
+    <link href="./assets/status.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <img alt="Crownpeak Logo" class="logo" src="./assets/logo_crownpeak.svg">
+    <h1 class="text-3xl font-bold">FirstSpirit™<br>Connect for Commerce</h1>
+    <h2 class="text-xl text-gray-600">Frontend API Backend</h2>
+    <p class="text-xl text-gray-600">Version <span id="version">...</span></p>
+    <div class="status">
+        <h3 class="text-xl font-bold">Configuration</h3>
+        <ul class="text-md">
+            <li class="text-gray-300">SSL <span class="state" id="ssl_status">...</span></li>
+            <li class="text-gray-300">
+                <span class="text-normal" id="api_inactive_label">API</span>
+                <a class="hidden" id="api_active_link" onclick="copyURI(event, 'api')" target="_blank">
+                    API&nbsp
+                    <span class="text-gray-600" id="api_basePath"></span>
+                    <span class="text-gray-600 hidden" id="api_basePath_state"></span>
+                </a>
+                <span class="state" id="api_status">...</span>
+            </li>
+            <li class="text-gray-300">
+                <span class="text-normal" id="status_inactive_label">Status</span>
+                <a class="hidden" id="status_active_link" onclick="copyURI(event, 'status')" target="_blank">
+                    Status&nbsp
+                    <span class="text-gray-600" id="status_basePath"></span>
+                    <span class="text-gray-600 hidden" id="status_basePath_state"></span>
+                </a>
+                <span class="state" id="status_status">...</span>
+            </li>
+            <li class="text-gray-300">
+                <span class="text-normal" id="docs_inactive_label">Documentation</span>
+                <a class="hidden" id="docs_active_link" target="_blank">
+                    Documentation&nbsp
+                    <span class="text-gray-600" id="docs_basePath"></span>
+                </a>
+                <span class="state" id="docs_status">...</span></li>
+            <li class="text-gray-300">Frontend API Server <span class="text-blue-500 state"
+                                                                id="server_version">...</span></li>
+        </ul>
+    </div>
+    <footer>
+        &copy;
+        <script>document.write(new Date().getFullYear().toString())</script>
+        Crownpeak Technology GmbH
+    </footer>
+</div>
+</body>
+</html>

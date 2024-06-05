@@ -19,6 +19,7 @@ A node version of at least 18 is required.
 2. Run `npm i`.
 3. Use the **config/example.yml** template to create a **config/local.yaml** file.
 4. Run `npm start` to start the service or `npm run start:watch` to enable live reload.
+5. The status of the service can be observed via the `/` route.
 
 ## Configuration
 
@@ -129,6 +130,14 @@ SSL configuration is made within the `ssl` segment inside the server config. SSL
 | key     | SSL_KEY_PATH  | Path to the SSL Key file, either absolute or relative to the current working directory.         |
 | cert    | SSL_CERT_PATH | Path to the SSL Certificate file, either absolute or relative to the current working directory. |
 
+### Interactive Documentation (Swagger UI)
+
+The interactive documentation is not enabled by default for security reasons. It can be configured within the server.docs segment of the configuration files.
+
+|  Param   |  Environment   | Description                                   |
+|:--------:|:--------------:|:----------------------------------------------|
+| enabled  |   SERVE_DOCS   | Whether to serve Swagger UI                   |
+| basePath | DOCS_BASE_PATH | Path on which the Swagger UI should be served |
 
 ### Troubleshooting
 

@@ -10,6 +10,14 @@ server:
   # The path on which this backend service is served.
   basePath: /api
 
+  # Specify Swagger UI serving
+  docs:
+    # Whether to serve Swagger UI
+    enabled: false
+
+    # Path on which the Swagger UI should be served
+    basePath: /docs
+
   # Providing SSL Encryption for risen browser requirements
   ssl:
     # Use SSL?

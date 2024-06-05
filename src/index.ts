@@ -8,7 +8,9 @@ import express from 'express';
 import cors from 'cors';
 
 import { getEcomEndpoints } from 'fcecom-frontend-api-server';
-import provideServer from './utils/provideServer'; // Configuration
+import { provideServer } from './utils/provideServer';
+import { provideStatus } from './utils/provideStatus';
+import { provideDocumentation } from './utils/provideDocumentation';
 
 // Configuration
 logFinalConfig();
@@ -30,6 +32,9 @@ if (!ecomEndpoints) {
   process.exit(1);
 }
 
-app.use(`${basePath}`, ecomEndpoints);
+app.use(`${basePath}`, ecomEndpoints); // API
+
+provideStatus(app);
+provideDocumentation(app);
 
 provideServer(app).listen(port, () => console.log(`Server started on ${chalk.green(`PORT ${port}`)}`));

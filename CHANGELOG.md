@@ -1,3 +1,10 @@
+## [2.6.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.5.0...v2.6.0) (2024-06-05)
+
+### Changes
+* A status page has been added that summarizes information about the version in use and some configurations.
+* The status page is accessible via the '/' route.
+* Updated fcecom-frontend-api-server to v1.0.1.
+
 ## [2.5.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.4.0...v2.5.0) (2024-05-17)
 
 ### Changes
