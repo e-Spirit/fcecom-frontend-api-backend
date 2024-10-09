@@ -22,8 +22,9 @@ server:
 core:
   project:
     # The API key of the CaaS instance for different viewing modes.
+    # As a best practice, define one API key for the preview mode, applicable to both the main project and, if applicable, any other remote project. The same principle applies to the release key.
     apiKey:
-      # Master API key for both viewing modes. All non-set apiKeys will default to this one.
+      # Master API key for both viewing modes. It is used for both viewing modes and acts as a fallback when either the preview key or the release key is not provided.
       master: &master aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
 
       # The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key.

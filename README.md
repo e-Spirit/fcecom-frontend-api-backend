@@ -105,9 +105,14 @@ Core configuration is made within the `core` segment inside the core config.
 
 Configuration of the API keys is made within the `core.project.apiKey` segment inside the core config.
 
+It is recommended to define one API key for the preview mode, applicable to both the main project and, if applicable, any other remote project. The same principle applies to the release key.
+In summary, one API key is needed for the preview and another for the release mode.
+
+Please note that, despite its name, the master key only acts as a fallback. It is always overridden by a set preview or release key.
+
 |     Param      | Environment | Description                                                                                         |
 |:--------------:|:-----------:|-----------------------------------------------------------------------------------------------------|
-| apiKey_master  | MASTER_KEY  | Master API key for both viewing modes. All non-set apiKeys will default to this one.                |
+| apiKey_master  | MASTER_KEY  | Master API key for both viewing modes. It is used for both viewing modes and acts as a fallback when either the preview key or the release key is not provided.
 | apiKey_preview | PREVIEW_KEY | The API key of the CaaS instance for preview viewing mode. Leave blank when providing a master key. |
 | apiKey_release | RELEASE_KEY | The API key of the CaaS instance for release viewing mode. Leave blank when providing a master key. |
 

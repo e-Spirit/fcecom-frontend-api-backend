@@ -1,3 +1,8 @@
+## [2.6.2](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.6.1...v2.6.2) (2024-10-09)
+
+### Changes
+* Added information on best practices for the use of API keys.
+
 ## [2.6.1](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.6.0...v2.6.1) (2024-07-10)
 
 ### Changes
