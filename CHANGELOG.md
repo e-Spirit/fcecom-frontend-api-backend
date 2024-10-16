@@ -1,3 +1,9 @@
+## [2.6.4](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.6.3...v2.6.4) (2024-10-16)
+
+### Changes
+* Fixed security vulnerabilities by updating the relevant dependencies.
+* Updated fcecom-frontend-api-server to v1.2.1.
+
 ## [2.6.3](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.6.2...v2.6.3) (2024-10-09)
 
 ### Changes
