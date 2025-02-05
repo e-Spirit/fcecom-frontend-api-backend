@@ -1,4 +1,4 @@
-# This file ha the mandatory configuration. It can be changed or overridden by subsequent files.
+# This file contains the mandatory configuration. It can be changed or overridden by subsequent files.
 # Learn more about the loading order of overriding files with the link below.
 # To configure your setup, add config files with this naming convention without uploading to Git (they are ignored by default)
 # https://github.com/node-config/node-config/wiki/Configuration-Files#file-load-order

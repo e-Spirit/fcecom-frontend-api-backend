@@ -49,6 +49,16 @@ files.
 |          tenantID          |          TENANT_ID           | The tenant ID of the CaaS project.                                                 |
 | removeUntranslatedSections | REMOVE_UNTRANSLATED_SECTIONS | Whether untranslated sections should be filtered out (optional, default is false). |
 
+### ShareView
+
+For secure communication between FSM and FE API Backend to make ShareView mode possible, there is an encrypted and signed way to exchange information.
+
+Configuration of the ShareView related part of the Frontend API module is made within the `core.project.shareView` segment of the configuration files.
+
+| Param  | Environment | Description                                                                         |
+|:------:|:-----------:|:------------------------------------------------------------------------------------|
+| secret | JWT_SECRET  | Secret for decrypting token and verifying its integrity. It must be base64 encoded. |
+
 ### Remotes
 
 Configuring FristSpirit Remote Projects is handled by the `core.project.remotes` entry. It is an object with the symbolic name of the remote project as key and an object containing the following fields as a value.

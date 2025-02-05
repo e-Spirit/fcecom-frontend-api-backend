@@ -68,6 +68,12 @@ core:
     # The tenant ID of the CaaS project.
     tenantID: TENANT_ID
 
+    # For secure communication between FSM and FE API Backend to make ShareView mode possible, there is an encrypted and signed way to exchange information.
+    shareView:
+
+      # Secret for decrypting token and verifying its integrity. It must be base64 encoded.
+      secret: JWT_SECRET
+
   # The base URL of the server running the Content Creator.
   fsServerOrigin: FS_SERVER_ORIGIN
 

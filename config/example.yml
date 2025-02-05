@@ -55,6 +55,12 @@ core:
     # Whether untranslated sections should be filtered out.
     removeUntranslatedSections: false
 
+    # For secure communication between FSM and FE API Backend to make ShareView mode possible, there is an encrypted and signed way to exchange information.
+    shareView:
+
+      # Secret for decrypting token and verifying its integrity. It must be base64 encoded.
+      secret: 'i-am-a-secret'
+
   # The base URL of the server running the Content Creator.
   fsServerOrigin: https://example.org/FSServerOrigin
 
