@@ -49,6 +49,15 @@ files.
 |          tenantID          |          TENANT_ID           | The tenant ID of the CaaS project.                                                 |
 | removeUntranslatedSections | REMOVE_UNTRANSLATED_SECTIONS | Whether untranslated sections should be filtered out (optional, default is false). |
 
+### Custom Form Fields
+
+Custom FirstSpirit form field names configuration is made within the `fields` segment inside the project config. This is an advanced feature and fully optional. Refer to the <a href="https://docs.e-spirit.com/ecom/fsconnect-com-api/fsconnect-com-frontend-api/latest/custom-field-names/" target="_blank">Frontend API documentation</a> and the <a href="https://docs.e-spirit.com/ecom/fsconnect-com/FirstSpirit_Connect_for_Commerce_Getting_Started_EN.html#form-fields" target="_blank">Connect for Commerce documentation</a>.
+
+| Param | Environment        | Description                                                                       |
+|-------|--------------------|-----------------------------------------------------------------------------------|
+| id    | CUSTOM_FIELDS_ID   | Name of the field for storing the ShopID                                          |
+| type  | CUSTOM_FIELDS_TYPE | Name of the field for storing the type of page represented in a FirstSpirit page. |
+
 ### ShareView
 
 For secure communication between FSM and FE API Backend to make ShareView mode possible, there is an encrypted and signed way to exchange information.

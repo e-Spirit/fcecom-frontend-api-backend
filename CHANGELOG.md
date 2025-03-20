@@ -1,4 +1,11 @@
-## [2.7.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.7.0...v2.7.1) (2025-02-19)
+## [2.8.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.7.1...v2.8.0) (2025-03-20)
+
+### Changes
+
+* Added the ability to change the standard form field names for ShopID and PageType.
+* Updated fcecom-frontend-api-server to v1.5.0.
+
+## [2.7.1](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.7.0...v2.7.1) (2025-02-19)
 
 ### Changes
 * Updated fcecom-frontend-api-server to v1.4.3.

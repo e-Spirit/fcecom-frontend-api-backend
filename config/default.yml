@@ -24,6 +24,15 @@ server:
     enabled: false
 
 core:
+  project:
+    # Customize several names of form fields.
+    fields:
+      # Name of the field for storing the ShopID
+      id: id
+
+      # Name of the field for storing the type of page represented in a FirstSpirit page.
+      type: type
+
   # Numeric representation of logLevels:
   # DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, NONE = 4
   logLevel: 1

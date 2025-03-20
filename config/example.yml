@@ -40,6 +40,14 @@ core:
         id: aaaaaaaa-bbbb-cccc-dddd-eeeeeeee
         locale: de_DE
 
+    # Customize several names of form fields.
+    fields:
+      # Name of the field for storing the ShopID
+      id: _Identifier123
+
+      # Name of the field for storing the type of page represented in a FirstSpirit page.
+      type: _PageType123
+
     # The URL of the navigation service.
     navigationServiceURL: https://example.org/NavigationService
 

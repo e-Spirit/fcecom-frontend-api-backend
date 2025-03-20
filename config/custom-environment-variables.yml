@@ -56,6 +56,14 @@ core:
         # The master language of the remote project
         locale: MEDIA_LOCALE
 
+    # Customize several names of form fields.
+    fields:
+      # Name of the field for storing the ShopID
+      id: CUSTOM_FIELDS_ID
+
+      # Name of the field for storing the type of page represented in a FirstSpirit page.
+      type: CUSTOM_FIELDS_TYPE
+
     # The URL of the navigation service.
     navigationServiceURL: NAVIGATION_SERVICE_URL
 
