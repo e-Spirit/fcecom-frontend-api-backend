@@ -1,3 +1,12 @@
+## [2.8.1](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.8.0...v2.8.1) (2025-04-08)
+
+### Changes
+
+* Updated fcecom-frontend-api-server to v1.6.0.<br>
+  Which includes the following changes:
+  * Added the ability to get the available locales in a FirstSpirit project.
+  * Fixed formatting issues.
+
 ## [2.8.0](https://github.com/e-Spirit/fcecom-frontend-api-backend/compare/v2.7.1...v2.8.0) (2025-03-20)
 
 ### Changes
